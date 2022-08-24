@@ -8,7 +8,7 @@ class Company(models.Model):
     region = models.CharField("지역", max_length=20)
     
     def __str__(self):
-        return self.name
+        return f'{self.id} / {self.name}'
 
 class User(models.Model):
     fullname = models.CharField("이름", max_length=10)
