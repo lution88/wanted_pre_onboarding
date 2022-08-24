@@ -1,5 +1,3 @@
-from dataclasses import fields
-from pyexpat import model
 from rest_framework.serializers import ModelSerializer
 from .models import Employment, User, Company
 
@@ -23,7 +21,7 @@ class EmploymentSerializer(ModelSerializer):
         
         
 class DetailEmploymentSerializer(ModelSerializer):
-    company = CompanySerializer(many=True, read_only=True)
+    company = CompanySerializer(read_only=True)
     class Meta:
         model = Employment
-        fields = ["id", "company", "position", "reward", "techstack"]
+        fields = ["id", "company","position", "reward", "techstack"]

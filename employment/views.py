@@ -33,8 +33,6 @@ class Employments(APIView):
 class DetailEmployment(APIView):
     def get(self, request, employment_id):
         employment = Employment.objects.get(id=employment_id)
-        print(employment.company.name)
-        print(dir(employment))
         employment_serializer = DetailEmploymentSerializer(employment)
         return Response(employment_serializer.data, status=status.HTTP_200_OK)
     

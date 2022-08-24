@@ -1,4 +1,3 @@
-from turtle import position
 from django.db import models
 
 # 회사, 사용자, 채용공고
@@ -19,7 +18,6 @@ class User(models.Model):
 
 class Employment(models.Model):
     company = models.ForeignKey(to=Company, verbose_name="회사", on_delete=models.CASCADE ,related_name="employments")
-    
     position = models.CharField("채용포지션", max_length=50)
     reward = models.IntegerField("채용보상금")
     content = models.TextField("채용내용")
